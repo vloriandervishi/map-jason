@@ -6,9 +6,10 @@
     <title>Fetch Api map json</title>
   </head>
   <body>
-    <p>latitude:</p><span class="latitude"></span></p>
+    <h1>Where is ISS?</h1>
+    <p>latitude:<span class="latitude"></span></p>
     <p>longitude:<span class="longitude"></span></p>
-    
+
     <script>
       async function getISS() {
         const response = await fetch(
@@ -16,8 +17,8 @@
         );
         const data = await response.json();
         const { latitude, longitude } = data;
-        document.querySelector(".latitude").innerHTML = latitude;
-        document.querySelector(".longitude").innerHTML = longitude;
+        document.querySelector(".latitude").textContent = latitude;
+        document.querySelector(".longitude").textContent = longitude;
       }
       getISS();
     </script>
