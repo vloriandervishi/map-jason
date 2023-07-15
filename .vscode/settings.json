@@ -1,0 +1,6 @@
+{
+    "vscode-edge-devtools.defaultEntrypoint": "",
+    "vscode-edge-devtools.pathMapping": {
+        "/": "${workspaceFolder}"
+    }
+}

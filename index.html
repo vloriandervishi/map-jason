@@ -4,15 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fetch Api map json</title>
+  </head>
+  <body>
+    <p>latitude:</p><span class="latitude"></span></p>
+    <p>longitude:<span class="longitude"></span></p>
+    
     <script>
       async function getISS() {
         const response = await fetch(
-          "https://api.open-nhttps://api.wheretheiss.at/v1/satellites/25544"
+          "https://api.wheretheiss.at/v1/satellites/25544"
         );
         const data = await response.json();
-        console.log(data);
+        const { latitude, longitude } = data;
+        document.querySelector(".latitude").innerHTML = latitude;
+        document.querySelector(".longitude").innerHTML = longitude;
       }
+      getISS();
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>
